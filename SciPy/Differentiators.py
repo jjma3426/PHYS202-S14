@@ -1,3 +1,6 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
 def fourPtCenteredDiff(x,y):
     """This algorithm uses a higher order differencing method to approximate the slope of the line. It finds the slope
     by checking the difference in dy versus dx from the center of the center of dx for 4 points of slices of the array."""
@@ -32,6 +35,7 @@ y = 8*x**4 + 3*x
 dydx4 = fourPtCenteredDiff(x,y)
 dydx2c = twoPtCenteredDiff(x,y)
 dydx2f = twoPtForwardDiff(x,y)
+dydxE = 32*x**3 + 3
 
 plt.plot(x, dydx4, label='Four Point Approximation')
 plt.plot(x, dydx2c, label='Two Point Approximation(Centered)')
